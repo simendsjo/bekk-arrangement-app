@@ -12,6 +12,7 @@ import {
   toParticipantWriteModel,
   IParticipantViewModelsWithWaitingList,
 } from 'src/types/participant';
+import { cancelParticipantRoute, confirmParticipantRoute } from 'src/routing';
 import { getArrangementSvcUrl } from 'src/config';
 import { queryStringStringify } from 'src/utils/browser-state';
 import { toEmailWriteModel } from 'src/types/email';
@@ -32,11 +33,21 @@ export const putEvent = (
   event: IEvent,
   editToken?: string
 ): Promise<IEventViewModel> =>
-  put({
-    host: getArrangementSvcUrl(),
-    path: `/events/${eventId}${queryStringStringify({ editToken })}`,
-    body: toEventWriteModel(event),
-  });
+  {
+    const cancelParticipationUrlTemplate =
+      document.location.origin +
+      cancelParticipantRoute({
+        eventId: '{eventId}',
+        email: '{email}',
+        cancellationToken: '{cancellationToken}',
+      });
+
+    return put({
+      host: getArrangementSvcUrl(),
+      path: `/events/${eventId}${queryStringStringify({ editToken })}`,
+      body: toEventWriteModel(event, '', cancelParticipationUrlTemplate),
+    })
+  };
 
 export const getEvent = (eventId: string): Promise<IEventViewModel> =>
   get({
