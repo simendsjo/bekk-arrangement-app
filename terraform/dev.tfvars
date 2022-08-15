@@ -9,7 +9,7 @@ task_environment = {
   Auth0__Audience      = "QHQy75S7tmnhDdBGYSnszzlhMPul0fAE"
   BEKK_API_URL         = "https://api.dev.bekk.no"
   ARRANGEMENT_SVC_URL  = "https://api.bekk.dev/arrangement-svc"
-  EMPLOYEE_SVC_URL     = "https://api.dev.bekk.no/employee-svc"
+  EMPLOYEE_SVC_URL     = "https://api.bekk.dev/employee-svc"
 }
 
 task_secrets = []

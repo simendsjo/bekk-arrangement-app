@@ -39,7 +39,7 @@ app.get('/config', (request, response) =>
     bekkApiUrl: process.env.BEKK_API_URL || 'https://api.dev.bekk.no',
     arrangementSvcUrl: getArraSvcUrl(),
     employeeSvcUrl:
-      process.env.EMPLOYEE_SVC_URL || 'https://api.dev.bekk.no/employee-svc',
+      process.env.EMPLOYEE_SVC_URL || 'https://api.bekk.dev/employee-svc',
     audience: process.env.AUTH0_AUDIENCE || 'QHQy75S7tmnhDdBGYSnszzlhMPul0fAE',
     issuerDomain: process.env.AUTH0_ISSUER_DOMAIN || 'bekk-dev.eu.auth0.com',
     scopes: process.env.SCOPES || 'openid name groups email',

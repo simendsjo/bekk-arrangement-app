@@ -5,7 +5,7 @@
   },
   {
     "name": "EMPLOYEE_SVC_URL",
-    "value": "https://api.dev.bekk.no/employee-svc"
+    "value": "https://api.bekk.dev/employee-svc"
   },
   {
     "name": "AUTH0_ISSUER_DOMAIN",
